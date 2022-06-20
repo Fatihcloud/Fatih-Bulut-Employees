@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 public class MainClass {
 
     public static void main(String[] args) {
-        long tstart = System.currentTimeMillis();
+        //long tstart = System.currentTimeMillis();
         CsvOkuma reader = new CsvOkuma();
         try {
             Map<Integer, List<Employees>> employeeGroups;
             PriorityQueue<Couple> couplePriorityQueue = new PriorityQueue<>(Comparator.comparingInt(Couple::getCount).reversed());
             List<Employees> entries = reader.read("/Users/fatihcloud/IdeaProjects/cvs/src/data.csv");
-            System.out.println("Employees");
+            System.out.println("Employees :");
             entries.stream().forEach(System.out::println);
 
             employeeGroups = entries.stream().collect(Collectors.groupingBy(Employees::getProjectId));
@@ -59,13 +59,14 @@ public class MainClass {
                 }
                 couplePriorityQueue.add(couple1);
             }
-
+            System.out.println("     ");
+            System.out.println("Sample output :");
             System.out.println(couplePriorityQueue.poll());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
 
-        long tstop = System.currentTimeMillis();
-        System.out.printf("Duration: %dms",tstop - tstart);
+        //long tstop = System.currentTimeMillis();
+        //System.out.printf("Duration: %dms",tstop - tstart);
     }
 }

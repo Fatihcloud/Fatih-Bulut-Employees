@@ -49,7 +49,7 @@ public class Employees {
     @Override
     public String toString() {
         return String.format(
-                "{emp: %d, proj: %d, start: %s, fin: %s}",
+                "EmpID: %d, ProjectID: %d, DateFrom: %s, DateTo: %s",
                 this.empId,
                 this.projectId,
                 dateFrom != null ? dateFrom.toString() : "NaN",
