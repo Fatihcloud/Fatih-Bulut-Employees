@@ -60,7 +60,7 @@ public class MainClass {
                 couplePriorityQueue.add(couple1);
             }
             System.out.println("     ");
-            System.out.println("Sample output :");
+            System.out.println("The longest working couple :");
             System.out.println(couplePriorityQueue.poll());
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
